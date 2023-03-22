@@ -2,10 +2,26 @@
 //
 
 #include <iostream>
+#include <unordered_map>
+#include <string>
+
+using namespace std;
+
+void test_map(int i) {
+    unordered_map<string, int> my_map;
+    my_map["hello"] = 1 + i;
+    my_map["hellom"] = 1 - i;
+
+    cout << my_map["hello"];
+
+    for (const auto& value : my_map) {
+        cout << value.first << " - " << value.second << endl;
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    test_map(7);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
